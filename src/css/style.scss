@@ -1,0 +1,29 @@
+$main-color: #FA8630;
+$main-color-dark: #036369;
+$secondary-color: #287C81;
+$secondary-color-light: #B4D4B8;
+$secondary-color-dark: #61543F;
+
+body {
+  background-color: red;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  background-color: $secondary-color-light;
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+footer {
+  background-color: $secondary-color-light;
+}

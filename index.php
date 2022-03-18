@@ -1,5 +1,7 @@
 <?php get_header() ?>
+<main>
 
-Thème mille feuilles
+  Thème mille feuilles
 
+</main>
 <?php get_footer() ?>
