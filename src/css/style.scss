@@ -12,6 +12,10 @@ $breakpoint-lg: 1200px;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: red;
   margin: 0;
@@ -20,11 +24,12 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
   background-color: $secondary-color-light;
-  padding: 0 0.5rem;
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +39,17 @@ header {
   }
   .nav {
     width: 100%;
-    position: absolute;
+    height: 0;
+    &--open {
+      .menu-item {
+        transform: translateX(0);
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.1 - 0.1}s;
+          }
+        }
+      }
+    }
   }
   .menu {
     list-style-type: none;
@@ -46,8 +61,18 @@ header {
       font-size: 1.2rem;
       font-weight: 500;
       padding: 0.5rem;
+      position: relative;
+      transform: translateX(100%);
+      transition: all 0.3s ease-in-out;
+      background: $secondary-color-light;
+      text-align: center;
+      @for $i from 1 through 10 {
+        &:nth-last-child(#{$i}) {
+          transition-delay: #{$i * 0.1 - 0.1}s;
+        }
+      }
       a {
-        color: $secondary-color;
+        color: $main-color-dark;
         text-decoration: none;
         position: relative;
         &::before {
@@ -60,7 +85,7 @@ header {
           bottom: 0;
           transform: scaleX(0);
           transform-origin: right;
-          background-color: $secondary-color;
+          background-color: $main-color-dark;
         }
         &:hover {
           &::before {
