@@ -10,7 +10,10 @@
 <body <?php body_class(); ?>>
   <header>
     <nav>
-      <a href="#"><?php bloginfo('name') ?></a>
+      <a href="/"><?php
+if ( function_exists( 'the_custom_logo' ) ) {
+    the_custom_logo();
+} ?></a>
       <?php
       wp_nav_menu([
         'theme_location' => 'main-menu',

@@ -9,8 +9,12 @@ $the_theme = wp_get_theme();
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+// add footer and main menus
 function register_my_menu(){
   register_nav_menu( 'main-menu', 'Menu principal' );
   register_nav_menu( 'footer', 'Footer' );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
+// add custom logo feature
+add_theme_support( 'custom-logo' );
