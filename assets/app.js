@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"Hello World!\");\nconsole.log('test')\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("const app = {\n  toggleMenu: function () {\n    const burger = document.getElementsByClassName('hamburger')[0];\n    const menu = document.getElementById(\"navigation\");\n    if (burger.classList.contains(\"hamburger--open\")) {\n      burger.classList.remove(\"hamburger--open\");\n    } else {\n      burger.classList.add(\"hamburger--open\");\n    }\n    if (menu.classList.contains(\"nav--open\")) {\n      menu.classList.remove(\"nav--open\");\n    } else {\n      menu.classList.add(\"nav--open\");\n    }\n  },\n  addMenuEvent: function () {\n    const burger = document.getElementsByClassName('hamburger')[0];\n    burger.addEventListener('click', app.toggleMenu)\n  },\n  init: function () {\n    app.addMenuEvent();\n  },\n};\n\ndocument.addEventListener('DOMContentLoaded', app.init);\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

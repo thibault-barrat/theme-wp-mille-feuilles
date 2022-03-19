@@ -9,11 +9,12 @@
 
 <body <?php body_class(); ?>>
   <header>
-    <nav>
-      <a href="/"><?php
-if ( function_exists( 'the_custom_logo' ) ) {
-    the_custom_logo();
-} ?></a>
+
+    <?php
+    if (function_exists('the_custom_logo')) {
+      the_custom_logo();
+    } ?>
+    <nav class="nav" id="navigation">
       <?php
       wp_nav_menu([
         'theme_location' => 'main-menu',
@@ -21,4 +22,9 @@ if ( function_exists( 'the_custom_logo' ) ) {
       ])
       ?>
     </nav>
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
