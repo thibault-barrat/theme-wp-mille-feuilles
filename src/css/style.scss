@@ -69,6 +69,9 @@ header {
     }
     @media (min-width: $breakpoint-sm) {
       height: auto;
+      width: auto;
+      flex-grow: 1;
+      margin-right: 2rem;
     }
     &--secondary {
       display: none;
@@ -148,6 +151,21 @@ header {
     @media (min-width: $breakpoint-sm) {
       display: block;
       flex-basis: 25%;
+    }
+  }
+
+  .header-cart {
+    display: none;
+    @media (min-width: $breakpoint-sm) {
+      display: block;
+      flex-basis: 150px;
+    }
+    .cart-contents {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $main-color-dark;
+      text-decoration: none;
     }
   }
 
