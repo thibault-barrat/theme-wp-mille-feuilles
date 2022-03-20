@@ -51,6 +51,7 @@
         ]);
         ?>
       </nav>
+      <i class="fa-solid fa-cart-shopping"></i>
       <button class="hamburger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="menu">
         <span></span>
         <span></span>
