@@ -11,15 +11,6 @@
           <span class="sr-only">Recherche</span>
           <?php echo do_shortcode('[fibosearch layout="icon" mobile_overlay="1"]'); ?>
         </li>
-        <!-- <li class="shopping-nav__list-item">
-          <a class="shopping-nav__link" href="">
-         
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          </a>
-          <div class="shopping-nav__search">
-        <?php echo do_shortcode('[fibosearch]'); ?>
-      </div>
-        </li> -->
         <li class="shopping-nav__list-item">
           <a class="shopping-nav__link" href="<?php echo esc_url(wc_get_cart_url()); ?>">
             <span class="sr-only">Panier</span>
