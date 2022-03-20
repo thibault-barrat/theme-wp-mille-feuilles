@@ -41,11 +41,11 @@
         ?>
       </nav>
       <div class="header-cart">
-      
-      <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="Voir votre panier">
-      <i class="fa-solid fa-basket-shopping"></i>
-				<?php echo wp_kses_post(WC()->cart->get_cart_subtotal()); ?> <span class="count"><?php echo wp_kses_data(sprintf(_n('%d livre', '%d livres', WC()->cart->get_cart_contents_count(), 'storefront'), WC()->cart->get_cart_contents_count())); ?></span>
-			</a>
+
+        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="Voir votre panier">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <?php echo wp_kses_post(WC()->cart->get_cart_subtotal()); ?> <span class="count"><?php echo wp_kses_data(sprintf(_n('%d livre', '%d livres', WC()->cart->get_cart_contents_count(), 'storefront'), WC()->cart->get_cart_contents_count())); ?></span>
+        </a>
       </div>
       <button class="hamburger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="menu">
         <span></span>
