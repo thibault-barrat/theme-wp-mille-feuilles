@@ -21,3 +21,9 @@ add_action( 'after_setup_theme', 'register_my_menu' );
 
 // add custom logo feature
 add_theme_support( 'custom-logo' );
+
+// change Fibosearch icon
+add_filter( 'dgwt/wcas/form/magnifier_ico', function ( $html, $class ) {
+  $html = '<i class="fa-solid fa-magnifying-glass ' . $class . '" aria-hidden="true"></i>';
+  return $html;
+}, 10, 2 );
