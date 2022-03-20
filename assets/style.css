@@ -12,80 +12,82 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden; }
 
+.container {
+  padding: 0rem 1.5rem; }
+  @media (min-width: 576px) {
+    .container {
+      padding: 0 3rem; } }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 65rem;
+      margin-left: auto;
+      margin-right: auto; } }
+
 header {
   background-color: #b4d4b8;
-  padding: 0.5rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; }
+  padding: 0.5rem 0; }
+  header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; }
+    @media (min-width: 768px) {
+      header .container {
+        flex-direction: row;
+        flex-wrap: wrap; } }
   header .custom-logo {
     max-width: 100px; }
   header .nav {
-    width: 100%;
+    width: 100vw;
     height: 0; }
-    header .nav--open .menu-item {
+    header .nav--open .menu--mobile .menu-item {
       transform: translateX(0); }
-      header .nav--open .menu-item:nth-child(1) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(1) {
         transition-delay: 0s; }
-      header .nav--open .menu-item:nth-child(2) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(2) {
         transition-delay: 0.1s; }
-      header .nav--open .menu-item:nth-child(3) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(3) {
         transition-delay: 0.2s; }
-      header .nav--open .menu-item:nth-child(4) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(4) {
         transition-delay: 0.3s; }
-      header .nav--open .menu-item:nth-child(5) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(5) {
         transition-delay: 0.4s; }
-      header .nav--open .menu-item:nth-child(6) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(6) {
         transition-delay: 0.5s; }
-      header .nav--open .menu-item:nth-child(7) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(7) {
         transition-delay: 0.6s; }
-      header .nav--open .menu-item:nth-child(8) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(8) {
         transition-delay: 0.7s; }
-      header .nav--open .menu-item:nth-child(9) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(9) {
         transition-delay: 0.8s; }
-      header .nav--open .menu-item:nth-child(10) {
+      header .nav--open .menu--mobile .menu-item:nth-last-child(10) {
         transition-delay: 0.9s; }
+    @media (min-width: 768px) {
+      header .nav {
+        height: auto; } }
+    header .nav--secondary {
+      display: none; }
+      @media (min-width: 768px) {
+        header .nav--secondary {
+          flex-grow: 1;
+          display: flex;
+          justify-content: flex-end;
+          margin-right: 2rem; } }
   header .menu {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; }
-    header .menu-item {
+    padding: 0; }
+    header .menu .menu-item {
       font-size: 1.2rem;
-      font-weight: 500;
-      padding: 0.5rem;
-      position: relative;
-      transform: translateX(100%);
-      transition: all 0.3s ease-in-out;
-      background: #b4d4b8;
-      text-align: center; }
-      header .menu-item:nth-last-child(1) {
-        transition-delay: 0s; }
-      header .menu-item:nth-last-child(2) {
-        transition-delay: 0.1s; }
-      header .menu-item:nth-last-child(3) {
-        transition-delay: 0.2s; }
-      header .menu-item:nth-last-child(4) {
-        transition-delay: 0.3s; }
-      header .menu-item:nth-last-child(5) {
-        transition-delay: 0.4s; }
-      header .menu-item:nth-last-child(6) {
-        transition-delay: 0.5s; }
-      header .menu-item:nth-last-child(7) {
-        transition-delay: 0.6s; }
-      header .menu-item:nth-last-child(8) {
-        transition-delay: 0.7s; }
-      header .menu-item:nth-last-child(9) {
-        transition-delay: 0.8s; }
-      header .menu-item:nth-last-child(10) {
-        transition-delay: 0.9s; }
-      header .menu-item a {
+      padding: 0.5rem; }
+      @media (min-width: 768px) {
+        header .menu .menu-item {
+          font-size: 1rem; } }
+      header .menu .menu-item a {
         color: #036369;
         text-decoration: none;
         position: relative; }
-        header .menu-item a::before {
+        header .menu .menu-item a::before {
           position: absolute;
           content: "";
           left: 0;
@@ -96,9 +98,52 @@ header {
           transform: scaleX(0);
           transform-origin: right;
           background-color: #036369; }
-        header .menu-item a:hover::before {
+        header .menu .menu-item a:hover::before {
           transform: scaleX(1);
           transform-origin: left; }
+    header .menu--mobile {
+      display: flex;
+      flex-direction: column; }
+      header .menu--mobile .menu-item {
+        position: relative;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        background: #b4d4b8;
+        text-align: center; }
+        header .menu--mobile .menu-item:nth-child(1) {
+          transition-delay: 0s; }
+        header .menu--mobile .menu-item:nth-child(2) {
+          transition-delay: 0.1s; }
+        header .menu--mobile .menu-item:nth-child(3) {
+          transition-delay: 0.2s; }
+        header .menu--mobile .menu-item:nth-child(4) {
+          transition-delay: 0.3s; }
+        header .menu--mobile .menu-item:nth-child(5) {
+          transition-delay: 0.4s; }
+        header .menu--mobile .menu-item:nth-child(6) {
+          transition-delay: 0.5s; }
+        header .menu--mobile .menu-item:nth-child(7) {
+          transition-delay: 0.6s; }
+        header .menu--mobile .menu-item:nth-child(8) {
+          transition-delay: 0.7s; }
+        header .menu--mobile .menu-item:nth-child(9) {
+          transition-delay: 0.8s; }
+        header .menu--mobile .menu-item:nth-child(10) {
+          transition-delay: 0.9s; }
+      @media (min-width: 768px) {
+        header .menu--mobile {
+          display: none; } }
+    header .menu--main {
+      display: none; }
+      @media (min-width: 768px) {
+        header .menu--main {
+          display: flex; } }
+  header .site-search {
+    display: none; }
+    @media (min-width: 768px) {
+      header .site-search {
+        display: block;
+        flex-basis: 25%; } }
   header .hamburger {
     cursor: pointer;
     position: absolute;
@@ -112,7 +157,7 @@ header {
     z-index: 200;
     top: 50%;
     transform: translateY(-50%); }
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 768px) {
       header .hamburger {
         display: none; } }
     header .hamburger span {

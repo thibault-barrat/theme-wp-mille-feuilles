@@ -12,6 +12,8 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 // add footer and main menus
 function register_my_menu(){
   register_nav_menu( 'main-menu', 'Menu principal' );
+  register_nav_menu( 'mobile-main-menu', 'Menu principal mobile' );
+  register_nav_menu( 'secondary-menu', 'Menu secondaire' );
   register_nav_menu( 'footer', 'Footer' );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );

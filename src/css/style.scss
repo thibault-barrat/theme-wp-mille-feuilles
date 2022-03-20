@@ -27,27 +27,56 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  padding: 0rem 1.5rem;
+  @media (min-width: $breakpoint-xs) {
+    padding: 0 3rem;
+  }
+  @media (min-width: $breakpoint-sm) {
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 header {
   background-color: $secondary-color-light;
   padding: 0.5rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
   .custom-logo {
     max-width: 100px;
   }
   .nav {
-    width: 100%;
+    width: 100vw;
     height: 0;
     &--open {
-      .menu-item {
+      .menu--mobile .menu-item {
         transform: translateX(0);
         @for $i from 1 through 10 {
-          &:nth-child(#{$i}) {
+          &:nth-last-child(#{$i}) {
             transition-delay: #{$i * 0.1 - 0.1}s;
           }
         }
+      }
+    }
+    @media (min-width: $breakpoint-sm) {
+      height: auto;
+    }
+    &--secondary {
+      display: none;
+      @media (min-width: $breakpoint-sm) {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 2rem;
       }
     }
   }
@@ -55,21 +84,12 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    &-item {
+
+    .menu-item {
       font-size: 1.2rem;
-      font-weight: 500;
       padding: 0.5rem;
-      position: relative;
-      transform: translateX(100%);
-      transition: all 0.3s ease-in-out;
-      background: $secondary-color-light;
-      text-align: center;
-      @for $i from 1 through 10 {
-        &:nth-last-child(#{$i}) {
-          transition-delay: #{$i * 0.1 - 0.1}s;
-        }
+      @media (min-width: $breakpoint-sm) {
+        font-size: 1rem;
       }
       a {
         color: $main-color-dark;
@@ -95,7 +115,42 @@ header {
         }
       }
     }
+
+    &--mobile {
+      display: flex;
+      flex-direction: column;
+      .menu-item {
+        position: relative;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        background: $secondary-color-light;
+        text-align: center;
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.1 - 0.1}s;
+          }
+        }
+      }
+      @media (min-width: $breakpoint-sm) {
+        display: none;
+      }
+    }
+    &--main {
+      display: none;
+      @media (min-width: $breakpoint-sm) {
+        display: flex;
+      }
+    }
   }
+
+  .site-search {
+    display: none;
+    @media (min-width: $breakpoint-sm) {
+      display: block;
+      flex-basis: 25%;
+    }
+  }
+
   .hamburger {
     cursor: pointer;
     position: absolute;
@@ -109,7 +164,7 @@ header {
     z-index: 200;
     top: 50%;
     transform: translateY(-50%);
-    @media screen and (min-width: $breakpoint-md) {
+    @media screen and (min-width: $breakpoint-sm) {
       display: none;
     }
     span {
