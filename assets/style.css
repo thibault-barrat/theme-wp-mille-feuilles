@@ -10,7 +10,8 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  color: #61543f; }
 
 main {
   flex-grow: 1;
@@ -333,4 +334,16 @@ footer {
     align-items: center;
     padding-top: 4rem;
     padding-bottom: 4rem; }
+
+.events__title {
+  color: #036369;
+  position: relative; }
+  .events__title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 200px;
+    height: 4px;
+    background-color: #036369; }
 

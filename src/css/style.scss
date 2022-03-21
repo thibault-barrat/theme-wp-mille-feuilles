@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  color: $secondary-color-dark;
 }
 
 main {
@@ -376,5 +377,21 @@ footer {
     align-items: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+}
+
+.events {
+  &__title {
+    color: $main-color-dark;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 200px;
+      height: 4px;
+      background-color: $main-color-dark;
+    }
   }
 }
