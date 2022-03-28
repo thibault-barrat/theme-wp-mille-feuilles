@@ -28,6 +28,10 @@ body {
   color: $secondary-color-dark;
 }
 
+a {
+  color: $main-color-dark;
+}
+
 main {
   flex-grow: 1;
   display: flex;
@@ -450,4 +454,8 @@ footer {
     z-index: 1;
     margin-bottom: 1rem;
   }
+}
+
+.carte-tarifs {
+  max-width: 500px;
 }

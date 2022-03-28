@@ -13,6 +13,9 @@ body {
   overflow-x: hidden;
   color: #61543f; }
 
+a {
+  color: #036369; }
+
 main {
   flex-grow: 1;
   display: flex;
@@ -391,4 +394,7 @@ footer {
   .contact .leaflet-map {
     z-index: 1;
     margin-bottom: 1rem; }
+
+.carte-tarifs {
+  max-width: 500px; }
 
