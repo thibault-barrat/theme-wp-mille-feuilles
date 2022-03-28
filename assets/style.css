@@ -318,15 +318,11 @@ footer {
     font-family: "Dancing Script", cursive;
     font-size: 4rem;
     position: relative;
-    padding: 0 1rem; }
-  .banner__subtitle {
-    color: white;
-    z-index: 10;
-    font-weight: 400;
-    font-family: "Dancing Script", cursive;
-    font-size: 2rem;
-    position: relative;
-    padding: 0 1rem; }
+    padding: 0 1rem;
+    text-align: center; }
+    .banner__title--small {
+      font-size: 2rem;
+      font-weight: 400; }
   .banner .container {
     display: flex;
     flex-wrap: wrap;
@@ -335,10 +331,10 @@ footer {
     padding-top: 4rem;
     padding-bottom: 4rem; }
 
-.events__title {
+.homepage-section-title {
   color: #036369;
   position: relative; }
-  .events__title::after {
+  .homepage-section-title::after {
     content: "";
     position: absolute;
     bottom: -4px;
@@ -346,4 +342,16 @@ footer {
     width: 200px;
     height: 4px;
     background-color: #036369; }
+
+@media (min-width: 576px) {
+  .events__row {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem; } }
+
+.events__image {
+  flex-basis: 45%; }
+
+.events__content {
+  flex-basis: 55%; }
 
