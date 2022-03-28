@@ -34,5 +34,18 @@
       </div>
     </div>
   </section>
+  <section class="contact">
+    <?php $contact = get_field('contact'); ?>
+    <div class="container">
+      <h2 class="contact__title homepage-section-title homepage-section-title--light"><?php echo esc_html($contact['title']); ?></h2>
+      <div class="contact__form">
+        <?php echo do_shortcode($contact['form']); ?>
+      </div>
+      <div class="contact__details">
+        <?php echo wp_kses_post($contact['details']); ?>
+        <?php echo do_shortcode($contact['map']); ?>
+      </div>
+    </div>
+  </section>
 </main>
 <?php get_footer() ?>
