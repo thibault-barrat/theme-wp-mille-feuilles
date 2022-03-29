@@ -69,6 +69,10 @@ header {
     width: 100vw;
     height: 0;
     &--open {
+      .menu--mobile {
+        opacity: 1;
+        visibility: visible;
+      }
       .menu--mobile .menu-item {
         transform: translateX(0);
         @for $i from 1 through 10 {
@@ -134,6 +138,8 @@ header {
     &--mobile {
       display: flex;
       flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
       .menu-item {
         position: relative;
         transform: translateX(100%);
@@ -429,7 +435,8 @@ footer {
   &__title {
     flex-basis: 100%;
   }
-  &__form, &__details {
+  &__form,
+  &__details {
     flex-basis: 100%;
     @media (min-width: $breakpoint-sm) {
       flex-basis: 48%;
@@ -458,4 +465,102 @@ footer {
 
 .carte-tarifs {
   max-width: 500px;
+}
+
+.blog {
+  .container--grid {
+    max-width: 50rem;
+    @media (min-width: $breakpoint-xs) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      align-items: start;
+    }
+  }
+  &__title {
+    @media (min-width: $breakpoint-xs) {
+      grid-column: 1 / span 2;
+    }
+  }
+  &__pagination {
+    margin-bottom: 1rem;
+    text-align: center;
+    @media (min-width: $breakpoint-xs) {
+      grid-column: 1 / span 2;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  .post {
+    padding: 0 1.25rem 1.25rem;
+    border: 1px solid #e9e9e9;
+    margin-bottom: 1.25rem;
+    &__image {
+      margin: 0 -1.25rem;
+      &:hover {
+        .post__image-overlay {
+          opacity: 1;
+        }
+      }
+    }
+    &__image-link {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      img {
+        vertical-align: middle;
+      }
+    }
+    &__image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    &__title {
+      margin: 1rem 0;
+      font-size: 1rem;
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $main-color-dark;
+        }
+      }
+    }
+    &__date {
+      margin-bottom: 1rem;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+    &__excerpt {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    &__readmore {
+      font-weight: 300;
+      font-size: 0.8rem;
+      a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid;
+        color: inherit;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $main-color-dark;
+        }
+        i {
+          margin-left: 0.5rem;
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
 }
