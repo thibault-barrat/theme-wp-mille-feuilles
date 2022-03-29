@@ -32,6 +32,12 @@ a {
   color: $main-color-dark;
 }
 
+blockquote {
+  border-left: 3px solid;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+}
+
 main {
   flex-grow: 1;
   display: flex;
