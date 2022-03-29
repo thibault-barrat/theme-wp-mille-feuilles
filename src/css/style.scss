@@ -72,6 +72,7 @@ header {
       .menu--mobile {
         opacity: 1;
         visibility: visible;
+        transition: opacity 0s 0s, visibility 0s 0s;
       }
       .menu--mobile .menu-item {
         transform: translateX(0);
@@ -140,6 +141,7 @@ header {
       flex-direction: column;
       opacity: 0;
       visibility: hidden;
+      transition: opacity 0s 1s, visibility 0s 1s;
       .menu-item {
         position: relative;
         transform: translateX(100%);
@@ -562,5 +564,11 @@ footer {
         }
       }
     }
+  }
+}
+
+.error404 {
+  main .container {
+    text-align: center;
   }
 }
