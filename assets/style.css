@@ -55,9 +55,8 @@ header {
     width: 100vw;
     height: 0; }
     header .nav--open .menu--mobile {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0s 0s, visibility 0s 0s; }
+      transform: translateX(0);
+      transition: transform 0s 0s; }
     header .nav--open .menu--mobile .menu-item {
       transform: translateX(0); }
       header .nav--open .menu--mobile .menu-item:nth-last-child(1) {
@@ -125,9 +124,10 @@ header {
     header .menu--mobile {
       display: flex;
       flex-direction: column;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0s 1s, visibility 0s 1s; }
+      transform: translateX(100%);
+      z-index: 100;
+      position: relative;
+      transition: transform 0s 1s; }
       header .menu--mobile .menu-item {
         position: relative;
         transform: translateX(100%);

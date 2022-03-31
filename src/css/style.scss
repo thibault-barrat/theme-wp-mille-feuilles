@@ -76,9 +76,8 @@ header {
     height: 0;
     &--open {
       .menu--mobile {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0s 0s, visibility 0s 0s;
+        transform: translateX(0);
+        transition: transform 0s 0s;
       }
       .menu--mobile .menu-item {
         transform: translateX(0);
@@ -92,7 +91,6 @@ header {
     @media (min-width: $breakpoint-sm) {
       height: auto;
       width: auto;
-      //flex-grow: 1;
       flex-basis: calc(100% - 12rem);
       margin-right: 2rem;
     }
@@ -145,9 +143,10 @@ header {
     &--mobile {
       display: flex;
       flex-direction: column;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0s 1s, visibility 0s 1s;
+      transform: translateX(100%);
+      z-index: 100;
+      position: relative;
+      transition: transform 0s 1s;
       .menu-item {
         position: relative;
         transform: translateX(100%);
